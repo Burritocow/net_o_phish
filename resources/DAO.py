@@ -6,8 +6,8 @@ import datetime
 
 Base = declarative_base()
 
-class Hook(Base):
-    __tablename__ = 'hook'
+class Bite(Base):
+    __tablename__ = 'bite'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     uid = Column(Integer)
@@ -15,4 +15,4 @@ class Hook(Base):
     template = Column(Integer)
 
     def __repr__(self):
-        return "<Hook(id='%d', uid='%d', template='%d')>" % (self.id, self.uid, self.template)
+        return "<Bite(id='%d', uid='%d', template='%d')>" % (self.id, self.uid, self.template)

@@ -1,5 +1,5 @@
 from twisted.web.resource import Resource
-from resources.DAO import Hook
+from resources.DAO import Bite
 from MySqlConnection import session
 
 def decode_request_args(dict):
@@ -23,12 +23,13 @@ class Template1(Resource):
         dict = decode_request_args(request.args)
         request.responseHeaders.addRawHeader("Content-Type", "text/html; charset=utf-8")
         uid = dict.get("uid")[0]
+        template= dict.get("template")[0]
 
-        hook = Hook(uid=uid, template=2)
+        hook = Bite(uid=uid, template=template)
         session.add(hook)
         session.commit()
         # TODO create and append to a logger file
-        return "<html>uid: {}</html>".format(uid).encode("utf-8")
+        return "<html>uid: {}; template: {}</html>".format(uid, template).encode("utf-8")
 
 
 class Bar(Resource):

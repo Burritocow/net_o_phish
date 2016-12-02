@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 Session = sessionmaker()
-# TODO for the love of god don't publish this thing below (find way to not hardcode password)
-# Session.configure(bind=engine)
+engine = create_engine('mysql+pymysql://phish:2fEXKAqkA9Bn@localhost/test_db', echo=False)
+Session.configure(bind=engine)
 
 session = Session()
