@@ -2,6 +2,9 @@ from twisted.web.resource import Resource
 from resources.DAO import Bite
 from MySqlConnection import session
 
+import datetime
+
+
 def decode_request_args(dict):
     fixed_dictionary = {}
 
@@ -25,7 +28,7 @@ class Template1(Resource):
         uid = dict.get("uid")[0]
         template= dict.get("template")[0]
 
-        hook = Bite(uid=uid, template=template)
+        hook = Bite(uid=uid, template=template, access_time=datetime.datetime.now())
         session.add(hook)
         session.commit()
         # TODO create and append to a logger file
