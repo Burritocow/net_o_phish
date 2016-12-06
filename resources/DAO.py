@@ -16,3 +16,5 @@ class Bite(Base):
 
     def __repr__(self):
         return "<Bite(id='%d', uid='%d', template='%d')>" % (self.id, self.uid, self.template)
+
+# TODO add download hit resource

@@ -2,7 +2,7 @@ from twisted.web.resource import Resource
 from resources.DAO import Bite
 from MySqlConnection import session
 
-import datetime
+import datetime, logging
 
 
 def decode_request_args(dict):
@@ -21,17 +21,21 @@ def decode_request_args(dict):
     return fixed_dictionary
 
 
-class Template1(Resource):
+class Scholarships(Resource):
     def render_GET(self, request):
+        requestRecievedTime = datetime.datetime.now()
+
         dict = decode_request_args(request.args)
-        request.responseHeaders.addRawHeader("Content-Type", "text/html; charset=utf-8")
         uid = dict.get("uid")[0]
         template= dict.get("template")[0]
 
-        hook = Bite(uid=uid, template=template, access_time=datetime.datetime.now())
-        session.add(hook)
+        bite = Bite(uid=uid, template=template, access_time=requestRecievedTime)
+        session.add(bite)
         session.commit()
-        # TODO create and append to a logger file
+
+        logging.info("Request received; uid: %s, template: %s, access_time: %s", uid, template, str(requestRecievedTime))
+
+        request.responseHeaders.addRawHeader("Content-Type", "text/html; charset=utf-8")
         return "<html>uid: {}; template: {}</html>".format(uid, template).encode("utf-8")
 
 
