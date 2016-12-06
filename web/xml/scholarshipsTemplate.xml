@@ -1,0 +1,68 @@
+<html xmlns:t="http://twistedmatrix.com/ns/twisted.web.template/0.1">
+
+<style>
+    #header {
+        width: 100%;
+        background: #004d86;
+        border-bottom: 4px solid #ce8901;
+        box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.35);
+        overflow: hidden;
+    }
+
+    #logo {
+        float: left;
+    }
+
+    #logo img {
+        max-width: 100%;
+        width: 292px;
+        margin: 15px 15px 15px 15px;
+    }
+
+    #title {
+        color: white;
+        font-size: 48px;
+        overflow: hidden;
+        margin: 15px 15px 15px 15px;
+        padding-left: 50px;
+        font-family: Georgia, serif;
+    }
+
+    #content h1{
+        color: #004d86;
+        font-size: 40px;
+    }
+
+    #content {
+        font-family: 'Univers LT W01_55 Roman', Arial, sans-serif;
+        width: 60%;
+    }
+
+    #content p {
+        display: block;
+        line-height: 23px;
+    }
+
+    #content a {
+        color: #004d86;
+    }
+</style>
+
+<body>
+    <div id="header">
+        <div id="logo">
+            <img src="https://www.unk.edu/_files/redesign/images/logo.png"></img>
+        </div>
+        <div id="title">Esteemed Scholarship Page</div>
+    </div>
+    <div id="content">
+        <h1>Peter Hewitt Incremental Scholarship Honor</h1>
+        <p>The Peter Hewitt Incremental Scholarship Honor is designed to provide opportunities for students who have been identified as leaders at the University of Nebraska Kearney,
+        and is amongst the most prestigious honors awarded at UNK.
+        Prospective students are chosen by a committee of students and faculty based on academic standing, community involvement, as well as financial need.
+        Recipients of this scholarship will receive a tuition waiver up to 12 credit hours per semester, which may be renewed annually.</p>
+        <br />
+        <a href="">Peter Hewitt Incremental Scholarship Honor Application</a>
+    </div>
+</body>
+</html>
