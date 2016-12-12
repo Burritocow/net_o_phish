@@ -1,6 +1,10 @@
 <html xmlns:t="http://twistedmatrix.com/ns/twisted.web.template/0.1">
 
 <style>
+    html, body {
+        height: 100%;
+    }
+
     #header {
         width: 100%;
         background: #004d86;
@@ -36,6 +40,7 @@
     #content {
         font-family: 'Univers LT W01_55 Roman', Arial, sans-serif;
         width: 60%;
+        min-height: 70%;
     }
 
     #content p {
@@ -46,6 +51,13 @@
     #content a {
         color: #004d86;
     }
+
+    #footer {
+        margin: auto;
+        width: 50%;
+        bottom: 0;
+    }
+
 </style>
 
 <body>
@@ -62,7 +74,11 @@
         Prospective students are chosen by a committee of students and faculty based on academic standing, community involvement, as well as financial need.
         Recipients of this scholarship will receive a tuition waiver up to 12 credit hours per semester, which may be renewed annually.</p>
         <br />
-        <a href="">Peter Hewitt Incremental Scholarship Honor Application</a>
+        <a href="bar">Peter Hewitt Incremental Scholarship Honor Application</a>
+    </div>
+    <div class="push"></div>
+    <div id="footer">
+        <img src="https://www.unk.edu/_files/redesign/images/footer-tag.png"></img>
     </div>
 </body>
 </html>
